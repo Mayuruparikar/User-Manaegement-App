@@ -38,7 +38,6 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleInvalidRoleException(InvalidRoleException ex, WebRequest request) {
         ErrorResponse errorDetails = new ErrorResponse(
                 HttpStatus.BAD_REQUEST,
-                // Use the message thrown by the UserService (e.g., "Invalid role...Allowed roles are USER or ADMIN.")
                 ex.getMessage(),
                 "Role validation failed during processing.",
                 request.getDescription(false)
@@ -74,7 +73,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorResponse> handleDataIntegrityViolation(DataIntegrityViolationException ex, WebRequest request) {
         String message = "A conflict occurred.";
-        // Check for the common 'Duplicate entry' message
         if (ex.getMessage() != null && ex.getMessage().contains("Duplicate entry")) {
             message = "Registration failed: The email address is already in use.";
         }
@@ -108,7 +106,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGlobalException(Exception ex, WebRequest request) {
-        // Log the full exception for detailed debugging
+
         ex.printStackTrace();
 
         ErrorResponse errorDetails = new ErrorResponse(
