@@ -37,6 +37,7 @@ public class SecurityConfig {
                         .requestMatchers("/register", "/login").permitAll()
                         .requestMatchers("/users").hasAuthority("ADMIN") // CHANGED: from ROLE_ADMIN
                         .requestMatchers("/users/**").hasAnyAuthority("USER", "ADMIN") // CHANGED: from ROLE_USER, ROLE_ADMIN
+                        .requestMatchers("/delete/**").hasAuthority("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(eh -> eh
