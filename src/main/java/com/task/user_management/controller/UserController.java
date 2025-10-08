@@ -20,7 +20,7 @@ public class UserController {
         User u = service.findById(id);
         return u == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(u);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
