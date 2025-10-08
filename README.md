@@ -70,7 +70,7 @@ Endpoint	Method	Required Authority	Purpose
 /users/{id}	GET/PUT/DELETE	USER, ADMIN	Manage specific user profile.
 Any other path		authenticated()	Requires a valid JWT token.
 ▶️ Testing the API (Postman)
-Use Postman or a similar tool to interact with the deployed API endpoints.
+Use Postman interact with the deployed API endpoints.
 
 1. Register a User (Public)
 Method: POST
@@ -102,6 +102,9 @@ All protected requests must include the JWT token in the format:
 Header: Authorization: Bearer <JWT TOKEN>
 
 Endpoint Example	Method
-[DOMAIN]/users	GET
-[DOMAIN]/users/1	GET
-[DOMAIN]/delete/1	DELETE
+GET
+[DOMAIN]/users	
+[DOMAIN]/users/1
+
+DELETE
+[DOMAIN]/delete/1	
