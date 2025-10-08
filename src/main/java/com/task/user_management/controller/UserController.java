@@ -7,15 +7,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
 public class UserController {
     private final UserService service;
     public UserController(UserService service) { this.service = service; }
-    @GetMapping
+    @GetMapping("/users")
     public ResponseEntity<List<User>> getAll() {
         return ResponseEntity.ok(service.findAll());
     }
-    @GetMapping("/{id}")
+    @GetMapping("users/{id}")
     public ResponseEntity<User> getById(@PathVariable Long id) {
         User u = service.findById(id);
         return u == null ? ResponseEntity.notFound().build() : ResponseEntity.ok(u);
