@@ -1,5 +1,3 @@
-This is the grammar-corrected and attractively formatted version of your README.md, incorporating all your specific requirements and deployment details.
-
 🚀 User Management APP
 This is a robust RESTful User Management API built with Spring Boot, secured using JWT (JSON Web Tokens), and deployed on the Railway cloud platform.
 
