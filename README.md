@@ -61,7 +61,7 @@ JWT_SECRET	Static	YourSecretKey12345...	Used for signing JWTs.
 The security configuration (SecurityConfig.java) is set to allow specific public access and enforce RBAC via JWT token validation.
 
 Domain:
-https://user-manaegement-app-production.up.railway.app
+https://user-management-app-production.up.railway.app
 
 Endpoint	Method	Required Authority	Purpose
 /register	POST	permitAll() (Public)	Create a new user account.
